@@ -56,8 +56,7 @@ export default async function handler(
              new Document({
                 pageContent: page.text,
                 metadata: {
-                    url: page.url,
-                    text: page.text 
+                    url: page.url               
                 }
              })
            ])
