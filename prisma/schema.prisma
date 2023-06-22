@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum Speaker {
+  user
+  bot
+}
+
+model Conversations {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id   String
+  entry     String
+  speaker   Speaker
+  create_at DateTime @default(now())
+}

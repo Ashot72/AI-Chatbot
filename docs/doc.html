@@ -1,0 +1,212 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:20.0pt;line-height:107%'>AI Chatbot</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Video Link: </span><a
+href="https://youtu.be/TkZCDJJrQqw" target="_blank"><span style='font-size:
+14.0pt;line-height:107%'>https://youtu.be/TkZCDJJrQqw</span></a></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>GitHub
+Repository: </span><a href="https://github.com/Ashot72/AI-Chatbot"
+target="_blank"><span style='font-size:14.0pt;line-height:107%'>https://github.com/Ashot72/AI-Chatbot</span></a></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>This Next.js
+application is very similar to my <i>Langchain Document Helper</i> </span><a
+href="https://github.com/Ashot72/LangChain-Documentation-Helper" target="_blank"><span
+style='font-size:14.0pt;line-height:107%'>https://github.com/Ashot72/LangChain-Documentation-Helper</span></a><span
+style='font-size:14.0pt;line-height:107%'>  application. You can</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>read about
+LangChain, Vector database such as Pinecone, embeddings etc.</span></p>
+
+<p class=MsoNormal><img border=0 width=1028 height=185 id="Picture 2"
+src="doc_files/image001.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 1</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We should
+crawl a single site or multiple sites. The sites can be of the same domain, and
+the app will not crawl the pages that have already been crawled. You can also
+specify</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>different domains
+with commas. In this application I will crawl a single site which is </span><a
+href="https://lightningtools.com/" target="_blank"><span style='font-size:14.0pt;
+line-height:107%'>https://lightningtools.com/</span></a><span style='font-size:
+14.0pt;line-height:107%'> the company I work for. </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1320 height=590 id="Picture 3"
+src="doc_files/image002.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 2</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We crawl the
+site and put into Pinecone vector database.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1403 height=701 id="Picture 4"
+src="doc_files/image003.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 3</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>You can look
+at <i>crawl.ts</i> and c<i>rawler.ts </i>files for crawling.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>LLMs are stateless,
+which means they have no concept of memory. That means that they do not
+maintain the chain of conversation on their own. We need to build</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>a mechanism
+that will maintain conversation history that will be part of the context for
+each response we get back from the chatbox. </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>For that reason,
+we use ably </span><a href="https://ably.com/" target="_blank"><span
+style='font-size:14.0pt;line-height:107%'>https://ably.com/</span></a><span
+style='font-size:14.0pt;line-height:107%'>  </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Ably is a real-time
+delivery platform that provides infrastructure and APIs for developers to build
+scalable and reliable real-time applications. It can be used to handle
+real-time</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>communication,
+data synchronization, and messaging across various platforms and devices. As
+out chatbot gains more users, the number of messages exchanged between the bot</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>and the
+users will increase. Ably is built to handle such growth in traffic without any
+performance degradation.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Ably also
+ensures message delivery and provides message history, even in cases of
+temporary disconnections or network issues. Implementing this level of
+reliability using only</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>WebSockets
+can be challenging and time-consuming.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Ably also
+provides built-in security features like token-based authentication and fine-grained
+access control, simplifying the process of securing chatbot</span><span
+style='color:black'>'</span><span style='font-size:14.0pt;line-height:107%'>s
+real-time communication.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1026 height=438 id="Picture 5"
+src="doc_files/image004.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 4</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>You should
+go to Ably site and create a free API KEY.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1315 height=555 id="Picture 6"
+src="doc_files/image005.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 5</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When you
+start the chat, you must specify a username. This name should be unique in
+general, as with this name you can access the entire conversation log</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>and also
+display it on a screen. In a real app, a user must be authenticated, and
+username can be their unique email address, ensuring no two users can have the
+same usernames.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1238 height=866 id="Picture 7"
+src="doc_files/image006.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 6</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We use </span><a
+href="https://www.mongodb.com/atlas/database" target="_blank"><span
+style='font-size:14.0pt;line-height:107%'>https://www.mongodb.com/atlas/database</span></a><span
+style='font-size:14.0pt;line-height:107%'> a MongoDB cloud database, to store
+and register each user conversation. This allows you to enhance the app and </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>display
+users’ conversation logs on the screen.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1403 height=668 id="Picture 8"
+src="doc_files/image007.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 7</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We use
+Prisma ORM </span><a href="https://www.prisma.io/" target="_blank"><span
+style='font-size:14.0pt;line-height:107%'>https://www.prisma.io/</span></a><span
+style='font-size:14.0pt;line-height:107%'> to access MongoDB. </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
